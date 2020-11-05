@@ -39,7 +39,7 @@ const IndexPage = () => {
     <Layout>
       <NetlifyIdentity />
       <SEO title="Home" />
-      <h2 onClick={() => { openNetlifyModal() }}>Login</h2>
+      <button onClick={() => { openNetlifyModal() }}>Login</button>
       <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
         <Image />
       </div>
