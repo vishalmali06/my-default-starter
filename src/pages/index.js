@@ -18,7 +18,7 @@ function initNetlifyIdentity() {
 function openNetlifyModal() {
   const netlifyIdentity = window.netlifyIdentity;
 
-  if(netlifyIdentity)
+  if (netlifyIdentity)
     netlifyIdentity.open();
   else
     console.log('netlifyIdentity not defined')
@@ -30,21 +30,34 @@ class NetlifyIdentity extends Component {
   }
 
   render() {
-    return(<div></div>)
+    return (<div></div>)
   }
 }
 
 const IndexPage = () => {
-  return(
+  return (
     <Layout>
       <NetlifyIdentity />
       <SEO title="Home" />
       <button onClick={() => { openNetlifyModal() }}>Login</button>
+
+      <form name="contact" netlify>
+        <p>
+          <label>Name <input type="text" name="name" /></label>
+        </p>
+        <p>
+          <label>Email <input type="email" name="email" /></label>
+        </p>
+        <p>
+          <button type="submit">Send</button>
+        </p>
+      </form>
+
       <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
         <Image />
       </div>
       <Link to="/page-2/">Go to page 2</Link>
-    </Layout> 
+    </Layout>
   )
 }
 
